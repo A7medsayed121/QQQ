@@ -1,0 +1,634 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#090909;
+    color:#f4f0ea;
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
+}
+
+/* =========================
+   LOADING / INTRO
+========================= */
+
+#intro{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    background:#090909;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    transition:1.2s ease;
+}
+
+.intro-content{
+    max-width:700px;
+    padding:30px;
+}
+
+.small{
+    letter-spacing:5px;
+    font-size:11px;
+    color:#999;
+    text-transform:uppercase;
+    margin-bottom:25px;
+}
+
+.intro-content h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(60px,10vw,130px);
+    font-weight:300;
+    line-height:.8;
+}
+
+.intro-content h1 span{
+    color:#c9a47c;
+}
+
+.intro-line{
+    width:1px;
+    height:80px;
+    background:#555;
+    margin:35px auto;
+}
+
+.enter-btn{
+    background:transparent;
+    border:1px solid #555;
+    color:white;
+    padding:16px 35px;
+    cursor:pointer;
+    letter-spacing:3px;
+    font-size:11px;
+    transition:.4s;
+}
+
+.enter-btn:hover{
+    background:#fff;
+    color:#000;
+}
+
+/* =========================
+   CURSOR
+========================= */
+
+.cursor{
+    width:8px;
+    height:8px;
+    background:#c9a47c;
+    border-radius:50%;
+    position:fixed;
+    pointer-events:none;
+    z-index:10000;
+    transform:translate(-50%,-50%);
+}
+
+.cursor-ring{
+    width:35px;
+    height:35px;
+    border:1px solid rgba(201,164,124,.5);
+    border-radius:50%;
+    position:fixed;
+    pointer-events:none;
+    z-index:9999;
+    transform:translate(-50%,-50%);
+    transition:.08s;
+}
+
+/* =========================
+   NAV
+========================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:25px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:100;
+    mix-blend-mode:difference;
+}
+
+.logo{
+    font-family:'Cormorant Garamond',serif;
+    font-size:25px;
+}
+
+.nav-right{
+    font-size:10px;
+    letter-spacing:3px;
+    color:#aaa;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-bg{
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at 50% 45%,rgba(201,164,124,.12),transparent 25%),
+        radial-gradient(circle at 20% 80%,rgba(255,255,255,.03),transparent 20%);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    padding:30px;
+}
+
+.hero-date{
+    color:#a99d91;
+    letter-spacing:5px;
+    font-size:10px;
+    margin-bottom:30px;
+}
+
+.hero h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(70px,13vw,170px);
+    line-height:.75;
+    font-weight:300;
+}
+
+.hero h2 span{
+    color:#c9a47c;
+    font-style:italic;
+}
+
+.hero-sub{
+    margin-top:45px;
+    color:#888;
+    font-size:12px;
+    letter-spacing:3px;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+section{
+    position:relative;
+}
+
+.container{
+    width:min(1100px,90%);
+    margin:auto;
+}
+
+.label{
+    color:#c9a47c;
+    font-size:10px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:25px;
+}
+
+.title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(45px,7vw,85px);
+    font-weight:300;
+    line-height:.95;
+}
+
+.text{
+    color:#999;
+    line-height:2;
+    font-size:15px;
+}
+
+/* =========================
+   STORY
+========================= */
+
+.story{
+    padding:180px 0;
+}
+
+.story-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:100px;
+    align-items:center;
+}
+
+.story-number{
+    font-family:'Cormorant Garamond',serif;
+    font-size:180px;
+    color:#151515;
+    position:absolute;
+    right:-20px;
+    top:-80px;
+    z-index:-1;
+}
+
+/* =========================
+   COUNTER
+========================= */
+
+.counter-section{
+    padding:140px 0;
+    background:#0d0d0d;
+    text-align:center;
+}
+
+.counter-title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:50px;
+    font-weight:300;
+    margin-bottom:50px;
+}
+
+.counter{
+    display:flex;
+    justify-content:center;
+    gap:70px;
+    flex-wrap:wrap;
+}
+
+.counter-box{
+    min-width:110px;
+}
+
+.counter-box strong{
+    display:block;
+    font-family:'Cormorant Garamond',serif;
+    font-size:55px;
+    font-weight:400;
+}
+
+.counter-box span{
+    color:#777;
+    font-size:9px;
+    letter-spacing:3px;
+}
+
+/* =========================
+   MEMORY
+========================= */
+
+.memories{
+    padding:180px 0;
+}
+
+.memory-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:70px;
+}
+
+.memory-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.memory{
+    height:430px;
+    background:#151515;
+    position:relative;
+    overflow:hidden;
+}
+
+.memory:nth-child(2){
+    margin-top:80px;
+}
+
+.memory:nth-child(3){
+    margin-top:30px;
+}
+
+.memory img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:1s;
+}
+
+.memory:hover img{
+    transform:scale(1.06);
+}
+
+.memory-placeholder{
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#555;
+    font-family:'Cormorant Garamond',serif;
+    font-size:60px;
+}
+
+.memory-caption{
+    position:absolute;
+    bottom:20px;
+    left:20px;
+    right:20px;
+    padding:15px;
+    background:rgba(0,0,0,.55);
+    backdrop-filter:blur(10px);
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+/* =========================
+   APOLOGY
+========================= */
+
+.apology{
+    background:#f0ece6;
+    color:#111;
+    padding:180px 0;
+}
+
+.apology .label{
+    color:#8b6d4e;
+}
+
+.apology-text{
+    max-width:900px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(45px,7vw,90px);
+    line-height:1;
+    font-weight:300;
+}
+
+.apology-text em{
+    color:#9a7551;
+}
+
+.apology-small{
+    max-width:650px;
+    margin-top:60px;
+    color:#666;
+    line-height:2;
+    font-size:14px;
+}
+
+/* =========================
+   LETTER
+========================= */
+
+.letter{
+    padding:180px 0;
+}
+
+.letter-box{
+    border-top:1px solid #292929;
+    border-bottom:1px solid #292929;
+    padding:80px 0;
+    max-width:850px;
+}
+
+.letter-text{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(30px,4vw,50px);
+    line-height:1.25;
+    color:#ddd;
+}
+
+.signature{
+    margin-top:50px;
+    color:#c9a47c;
+    font-family:'Cormorant Garamond',serif;
+    font-size:35px;
+}
+
+/* =========================
+   CHOICE
+========================= */
+
+.choice{
+    min-height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 20px;
+    background:
+        radial-gradient(circle at center,rgba(201,164,124,.08),transparent 30%);
+}
+
+.choice h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(55px,8vw,100px);
+    font-weight:300;
+}
+
+.choice p{
+    color:#777;
+    margin:30px auto 50px;
+    max-width:500px;
+    line-height:1.8;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.choice-btn{
+    padding:17px 35px;
+    background:transparent;
+    color:white;
+    border:1px solid #444;
+    cursor:pointer;
+    letter-spacing:2px;
+    font-size:10px;
+    transition:.4s;
+}
+
+.choice-btn:hover{
+    background:#f4f0ea;
+    color:#000;
+    border-color:#f4f0ea;
+}
+
+/* =========================
+   RESPONSE
+========================= */
+
+#response{
+    display:none;
+    padding:100px 20px;
+    text-align:center;
+    background:#111;
+}
+
+#response h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:55px;
+    font-weight:300;
+    margin-bottom:20px;
+}
+
+#response p{
+    color:#888;
+    max-width:550px;
+    margin:auto;
+    line-height:2;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.final{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.final-content{
+    max-width:900px;
+}
+
+.final-small{
+    letter-spacing:5px;
+    color:#777;
+    font-size:10px;
+    margin-bottom:35px;
+}
+
+.final h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(50px,8vw,105px);
+    font-weight:300;
+    line-height:.95;
+}
+
+.final h2 span{
+    color:#c9a47c;
+    font-style:italic;
+}
+
+.final-date{
+    margin-top:60px;
+    color:#555;
+    font-size:10px;
+    letter-spacing:4px;
+}
+
+/* =========================
+   MUSIC
+========================= */
+
+.music-btn{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    z-index:500;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    border:1px solid #444;
+    background:#111;
+    color:white;
+    cursor:pointer;
+    transition:.4s;
+}
+
+.music-btn:hover{
+    background:#f4f0ea;
+    color:#000;
+}
+
+/* =========================
+   REVEAL
+========================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(50px);
+    transition:1s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    nav{
+        padding:20px;
+    }
+
+    .nav-right{
+        display:none;
+    }
+
+    .story-grid{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .story{
+        padding:110px 0;
+    }
+
+    .memory-grid{
+        grid-template-columns:1fr;
+    }
+
+    .memory{
+        height:450px;
+        margin:0 !important;
+    }
+
+    .memory-head{
+        display:block;
+    }
+
+    .counter{
+        gap:30px;
+    }
+
+    .counter-box{
+        min-width:80px;
+    }
+
+    .counter-box strong{
+        font-size:42px;
+    }
+
+    .apology,
+    .memories,
+    .letter{
+        padding:110px 0;
+    }
+}
